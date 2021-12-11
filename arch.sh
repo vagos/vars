@@ -36,6 +36,10 @@ p
 w
 EOF
 
+lsblk
+
+read -p "Press ENTER to continue..."
+
 partprobe # Inform the OS of partition table changes.
 
 yes | mkfs.ext4 /dev/sda4
@@ -47,6 +51,7 @@ mount /dev/sda3 /mnt
 mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 mkdir -p /mnt/home
+mount /dev/sda4 /mnt/home
 
 pacstrap /mnt base base-devel linux linux-firmware dhcpcd
 
@@ -54,15 +59,23 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 echo $hstname > /mnt/etc/hostname
 
+# Create the chroot script
+
+cat >/mnt/chroot.sh << EOF
 arch-chroot /mnt
 
 # Inside the Arch installation
 
+# mkinitcpio -p linux
+
 passwd
 
-mkinitcpio -p linux
-
 pacman --noconfirm --needed -S grub && grub-install --target=i386-pc /dev/sda && grub-mkconfig -o /boot/grub/grub.cfg
+EOF
+
+arch-chroot /mnt bash /mnt/chroot.sh && rm /mnt/chroot.sh
+
+arch-chroot /mnt echo "root:$pass" | chpasswd
 
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -73,7 +86,7 @@ locale-gen
 ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime
 
 pacman --noconfirm --needed -S networkmanager
-systemctl enable NetworkManager
-systemctl start NetworkManager
+# systemctl enable NetworkManager
+# systemctl start NetworkManager
 
 curl -O "https://raw.githubusercontent.com/Vagos/vars/main/install.sh" && bash install.sh
