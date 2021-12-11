@@ -1,2 +1,16 @@
-#TAG, NAME, DESCRIPTION
-, ncmcpp, "is a terminal music player."
+#TAG,NAME,DESCRIPTION
+,ncmcpp,A terminal music player.
+,i3,The window manager.
+,stow,A symbolic links manager.
+,modidy,
+,alacritty, A terminal emulator.
+,nvim, 
+,sxiv, 
+,tmux, 
+,newsboat,
+,lazygit,
+,bashmount,
+,rsync,
+,stremio,
+,qutebrowser,
+,dmenu,
