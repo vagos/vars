@@ -66,16 +66,11 @@ arch-chroot /mnt
 
 # Inside the Arch installation
 
-# mkinitcpio -p linux
+mkinitcpio -p linux
 
 passwd
 
-pacman --noconfirm --needed -S grub && grub-install --target=i386-pc /dev/sda && grub-mkconfig -o /boot/grub/grub.cfg
-EOF
-
-arch-chroot /mnt bash /mnt/chroot.sh && rm /mnt/chroot.sh
-
-arch-chroot /mnt echo "root:$pass" | chpasswd
+pacman --noconfirm --needed -S grub && grub-install --target=i386-pc /dev/sda && grub-mkconfig -o boot/grub/grub.cfg
 
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -85,8 +80,17 @@ locale-gen
 
 ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime
 
+EOF
+
+arch-chroot /mnt bash /mnt/chroot.sh && rm /mnt/chroot.sh
+
+arch-chroot /mnt echo "root:$pass" | chpasswd
+
 pacman --noconfirm --needed -Sy networkmanager
 # systemctl enable NetworkManager
 # systemctl start NetworkManager
+
+umount /mnt/boot
+umount /mnt
 
 curl -O "https://raw.githubusercontent.com/Vagos/vars/main/install.sh" && bash install.sh
