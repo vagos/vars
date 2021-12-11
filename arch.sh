@@ -85,7 +85,7 @@ locale-gen
 
 ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime
 
-pacman --noconfirm --needed -S networkmanager
+pacman --noconfirm --needed -Sy networkmanager
 # systemctl enable NetworkManager
 # systemctl start NetworkManager
 
