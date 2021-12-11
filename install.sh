@@ -165,6 +165,11 @@ getuseranspass()
   done
 }
 
+changeperms()
+{
+  echo "$* #VARS" >> /etc/sudoers
+}
+
 adduser()
 {
   echo "Adding user $name"
@@ -195,12 +200,14 @@ getuseranspass || error "Installation cancelled."
 
 refreshkeyrings
 
+pacman -Sy
+
 basiscinstall
 
 adduser || error "Couldn't add username and/or password."
 
 # Allow user to run sudo without password.
-newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
+changeperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
 # Install the aur helper
 echo "Installing the AUR helper..."
