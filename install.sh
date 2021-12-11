@@ -158,7 +158,7 @@ getuseranspass()
   read -sp "Please enter a password: " pass
   read -sp "Please repeat your password: " passcnfrm
 
-  while ! [$pass = $passcnfrm]; do
+  while ! [ "$pass" = "$passcnfrm" ]; do
     echo "Passwords didn't match!"
     read -sp "Please enter a password: " pass
     read -sp "Please repeat your password: " passcnfrm
