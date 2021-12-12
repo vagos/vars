@@ -43,7 +43,7 @@ done
 #-----------------------------------------------------------------------
 
 
-installpkg() { pacman --noconfirm -S "$1"  ; } # >/dev/null 2>&1; &>/dev/null}
+installpkg() { pacman --noconfirm --needed -S "$1"  ; } # >/dev/null 2>&1; &>/dev/null}
 
 error() { printf "%s\n" "$1" >&2; exit 1; }
 

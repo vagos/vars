@@ -66,8 +66,6 @@ cat >/mnt/chroot.sh << EOF
 
 mkinitcpio -p linux && exit 1
 
-passwd
-
 pacman --noconfirm --needed -S grub && grub-install --target=i386-pc /dev/sda && grub-mkconfig -o boot/grub/grub.cfg
 
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
@@ -87,9 +85,13 @@ arch-chroot /mnt echo "root:$pass" | chpasswd
 pacman -Sy
 
 pacman --noconfirm --needed -S networkmanager
+
+pacman --noconfirm --needed -S grub && grub-install --target=i386-pc /dev/sda && grub-mkconfig -o /boot/grub/grub.cfg
 # systemctl enable NetworkManager
 # systemctl start NetworkManager
 
 umount /mnt/boot
 
-curl -O "https://raw.githubusercontent.com/Vagos/vars/main/install.sh" && bash install.sh
+echo "All done!"
+
+# curl -O "https://raw.githubusercontent.com/Vagos/vars/main/install.sh" && bash install.sh
