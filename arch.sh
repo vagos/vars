@@ -36,10 +36,6 @@ p
 w
 EOF
 
-lsblk
-
-read -p "Press ENTER to continue..."
-
 partprobe # Inform the OS of partition table changes.
 
 yes | mkfs.ext4 /dev/sda4
@@ -53,6 +49,10 @@ mount /dev/sda1 /mnt/boot
 mkdir -p /mnt/home
 mount /dev/sda4 /mnt/home
 
+lsblk
+
+read -p "Press ENTER to continue..."
+
 pacstrap /mnt base base-devel linux linux-firmware dhcpcd
 
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -62,8 +62,6 @@ echo $hstname > /mnt/etc/hostname
 # Create the chroot script
 
 cat >/mnt/chroot.sh << EOF
-arch-chroot /mnt
-
 # Inside the Arch installation
 
 mkinitcpio -p linux
@@ -86,11 +84,12 @@ arch-chroot /mnt bash /mnt/chroot.sh && rm /mnt/chroot.sh
 
 arch-chroot /mnt echo "root:$pass" | chpasswd
 
-pacman --noconfirm --needed -Sy networkmanager
+pacman -Sy
+
+pacman --noconfirm --needed -S networkmanager
 # systemctl enable NetworkManager
 # systemctl start NetworkManager
 
 umount /mnt/boot
-umount /mnt
 
 curl -O "https://raw.githubusercontent.com/Vagos/vars/main/install.sh" && bash install.sh
