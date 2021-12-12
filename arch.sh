@@ -75,7 +75,6 @@ echo "en_US ISO-8859-1" >> /etc/locale.gen
 locale-gen
 
 ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime
-
 EOF
 
 arch-chroot /mnt bash chroot.sh && rm /mnt/chroot.sh
@@ -86,7 +85,6 @@ pacman -Sy
 
 pacman --noconfirm --needed -S networkmanager
 
-pacman --noconfirm --needed -S grub && grub-install --target=i386-pc /dev/sda && grub-mkconfig -o /boot/grub/grub.cfg
 # systemctl enable NetworkManager
 # systemctl start NetworkManager
 
