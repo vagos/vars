@@ -133,7 +133,7 @@ installdotfiles() # Install dotfiles with stow
 {
   echo "Installing dotfiles..."
 
-  [ -z $3 ] && branch="master"
+  [ -z $3 ] && branch="main"
 
   dtdir="/home/$name/.dotfiles"
 
@@ -141,8 +141,8 @@ installdotfiles() # Install dotfiles with stow
 
   for dir in $dtdir/*/; do
     
-    printf "Installing dotfiles for %s" $dir
-    stow dir
+    printf "Installing dotfiles for %s" "$dir"
+    stow $dir
 
   done
 }
