@@ -55,7 +55,7 @@ welcome()
   printf "This is the $ScriptName installer script!\nRelax and enjoy the installation!\n\n-Vagos\n\n\n"
 }
 
-basiscinstall()
+basicinstall()
 {
   echo "Installing the bare basics first..."
 
@@ -78,7 +78,7 @@ maininstall()
 {
   # dialog --title "$ScriptName Installation" --infobox "Installing $1: $2" 4 70
   echo "Installing $1: $2"
-  # installpkg "$1"
+  installpkg "$1"
   sleep 0.5
 }
 
@@ -142,7 +142,7 @@ installdotfiles() # Install dotfiles with stow
   for dir in $dtdir/*/; do
     
     printf "Installing dotfiles for %s" $dir
-    # stow dir
+    stow dir
 
   done
 }
@@ -156,11 +156,13 @@ getuseranspass()
   done
 
   read -sp "Please enter a password: " pass
+  echo
   read -sp "Please repeat your password: " passcnfrm
 
   while ! [ "$pass" = "$passcnfrm" ]; do
     echo "Passwords didn't match!"
     read -sp "Please enter a password: " pass
+    echo
     read -sp "Please repeat your password: " passcnfrm
   done
 }
@@ -202,7 +204,7 @@ refreshkeyrings
 
 pacman -Sy
 
-basiscinstall
+basicinstall
 
 adduser || error "Couldn't add username and/or password."
 
@@ -215,6 +217,6 @@ manualinstall "yay-bin" || "Failed to install AUR helper."
 
 installprograms
 
-installdotfiles
+installdotfiles $dotfilesrepo
 
 finalize
