@@ -137,7 +137,7 @@ installdotfiles() # Install dotfiles with stow
 
   dtdir="/home/$name/.dotfiles"
 
-  sudo -u "$name" git clone -b "$branch" --recure-submodules "$1" "$dtdir" 
+  sudo -u "$name" git clone -b "$branch" --recurse-submodules "$1" "$dtdir" 
 
   for dir in $dtdir/*/; do
     
