@@ -6,7 +6,7 @@
 ,stow,A symbolic links manager.
 ,modidy,
 ,alacritty, A terminal emulator.
-,nvim, 
+,neovim,The text editor.
 ,sxiv, 
 ,tmux, 
 ,newsboat,
@@ -17,3 +17,4 @@ A,bashmount,
 ,qutebrowser,
 ,dmenu,
 ,cozette-otb,A cozy bitmap font.
+,picom,A terminal compositor.

@@ -143,7 +143,7 @@ installdotfiles() # Install dotfiles with stow
 
   for dir in */; do
     
-    printf "Installing dotfiles for %s" "${dir%/}"
+    printf "Installing dotfiles for %s\n" "${dir%/}"
     stow "${dir%/}"
 
   done
