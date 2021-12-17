@@ -139,7 +139,7 @@ installdotfiles() # Install dotfiles with stow
 
   sudo -u "$name" git clone -b "$branch" --recurse-submodules "$1" "$dtdir" 
 
-  cd $dtdit/*/
+  cd $dtdir
 
   for dir in */; do
     
