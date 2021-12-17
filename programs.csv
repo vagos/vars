@@ -1,4 +1,6 @@
 #TAG,NAME,DESCRIPTION
+,xorg-server,The graphical server.
+,xorg-init,Start the graphical server.
 ,ncmcpp,A terminal music player.
 ,i3,The window manager.
 ,stow,A symbolic links manager.
@@ -14,3 +16,4 @@
 ,stremio,
 ,qutebrowser,
 ,dmenu,
+,cozette-otb,A cozy bitmap font.

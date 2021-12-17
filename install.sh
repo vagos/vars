@@ -102,9 +102,9 @@ pipinstall()
 
 manualinstall()
 {
-  sudo -u "$name" mkdir -p "repodir"
+  sudo -u "$name" mkdir -p $srcdir
   sudo -u "$name" git clone --depth 1 "https://aur.archlinux.org/$1.git" "$srcdir/$1"
-  cd "$repodir/$1"
+  cd "$srcdir/$1"
 
   sudo -u $name -D "$srcdir/$1" makepkg --noconfirm -si || return 1
 }
@@ -211,7 +211,7 @@ changeperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
 # Install the aur helper
 echo "Installing the AUR helper..."
-manualinstall yay-bin || "Failed to install AUR helper."
+manualinstall "yay-bin" || "Failed to install AUR helper."
 
 installprograms
 
