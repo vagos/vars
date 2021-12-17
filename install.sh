@@ -139,7 +139,9 @@ installdotfiles() # Install dotfiles with stow
 
   sudo -u "$name" git clone -b "$branch" --recurse-submodules "$1" "$dtdir" 
 
-  for dir in $dtdir/*/; do
+  cd $dtdit/*/
+
+  for dir in */; do
     
     printf "Installing dotfiles for %s" "${dir%/}"
     stow "${dir%/}"
@@ -192,6 +194,7 @@ adduser()
 finalize()
 {
   echo "All done!"
+  cd /home/$name
 }
 
 #-----------------------------------------------------------------------
