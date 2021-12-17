@@ -1,20 +1,21 @@
 #TAG,NAME,DESCRIPTION
 ,xorg-server,The graphical server.
 ,xorg-xinit,Start the graphical server.
-,ncmcpp,A terminal music player.
+,ncmpcpp,A terminal music player.
 ,i3,The window manager.
 ,stow,A symbolic links manager.
-,modidy,
+,mopidy,
 ,alacritty, A terminal emulator.
 ,neovim,The text editor.
-,sxiv, 
+,sxiv,A simple X image viewer.
 ,tmux, 
 ,newsboat,
 ,lazygit,
-A,bashmount,
 ,rsync,
-,stremio,
 ,qutebrowser,
 ,dmenu,
-,cozette-otb,A cozy bitmap font.
 ,picom,A terminal compositor.
+A,noto-fonts-emoji,An emoji font.
+A,bashmount,
+A,cozette-otb,A cozy bitmap font.
+A,stremio,
