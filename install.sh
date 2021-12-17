@@ -50,7 +50,7 @@ error() { printf "%s\n" "$1" >&2; exit 1; }
 welcome() 
 {
 #  dialog --title "Welcome!" --msgbox "This is the VARS installer script!\n\nRelax and enjoy the installation!\n\n.t-Vagos" 10 60
-
+  clear
   printf "Welcome!\n"
   printf "This is the $ScriptName installer script!\nRelax and enjoy the installation!\n\n-Vagos\n\n\n"
 }
@@ -141,8 +141,8 @@ installdotfiles() # Install dotfiles with stow
 
   for dir in $dtdir/*/; do
     
-    printf "Installing dotfiles for %s" "$dir"
-    stow $dir
+    printf "Installing dotfiles for %s" "${dir%/}"
+    stow "${dir%/}"
 
   done
 }
@@ -165,6 +165,8 @@ getuseranspass()
     echo
     read -sp "Please repeat your password: " passcnfrm
   done
+
+  clear
 }
 
 changeperms()
