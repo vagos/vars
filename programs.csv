@@ -4,7 +4,6 @@
 ,ncmpcpp,A terminal music player.
 ,i3,The window manager.
 ,stow,A symbolic links manager.
-,mopidy,
 ,alacritty, A terminal emulator.
 ,neovim,The text editor.
 ,sxiv,A simple X image viewer.
@@ -15,7 +14,8 @@
 ,qutebrowser,
 ,dmenu,
 ,picom,A terminal compositor.
+,mopidy,
+,highlight,A universal sourcecode to formatted text converter.
 A,noto-fonts-emoji,An emoji font.
-A,bashmount,
+A,bashmount,A small cli for mounting external drives.
 A,cozette-otb,A cozy bitmap font.
-A,stremio,

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ScriptVersion="0.0.1"
+ScriptVersion="0.1"
 ScriptName="VARS"
 
 function usage ()
@@ -10,7 +10,6 @@ function usage ()
     Options:
     -h|help       Display this message
     -v|version    Display script version"
-
 }
 
 #-----------------------------------------------------------------------
@@ -49,7 +48,6 @@ error() { printf "%s\n" "$1" >&2; exit 1; }
 
 welcome() 
 {
-#  dialog --title "Welcome!" --msgbox "This is the VARS installer script!\n\nRelax and enjoy the installation!\n\n.t-Vagos" 10 60
   clear
   printf "Welcome!\n"
   printf "This is the $ScriptName installer script!\nRelax and enjoy the installation!\n\n-Vagos\n\n\n"
@@ -67,8 +65,6 @@ basicinstall()
 
 refreshkeyrings()
 {
-  # dialog --tile "Info" --infobox "Refreshing Arch Keyring..." 4 30
-
   echo "Refreshing Arch Keyring"
  
   installpkg archlinux-keyring
@@ -76,7 +72,6 @@ refreshkeyrings()
 
 maininstall()
 {
-  # dialog --title "$ScriptName Installation" --infobox "Installing $1: $2" 4 70
   echo "Installing $1: $2"
   installpkg "$1"
   sleep 0.5
@@ -84,7 +79,6 @@ maininstall()
 
 gitinstall()
 {
-   # program_name="$basename"
    sleep 1
 }
 
@@ -197,6 +191,17 @@ finalize()
   cd /home/$name
 }
 
+extrainstalls()
+{
+  nvim +'PlugInstall --sync' +qa # Install vim plugins
+
+  dirs=(downloads projects files)
+
+  for dir in ${dirs[@]}; do 
+    mkdir -p /home/$name/$dir
+  done
+}
+
 #-----------------------------------------------------------------------
 #  Main installation
 #-----------------------------------------------------------------------
@@ -207,7 +212,7 @@ getuseranspass || error "Installation cancelled."
 
 refreshkeyrings
 
-pacman -Sy
+pacman -Syy
 
 basicinstall
 
@@ -216,7 +221,6 @@ adduser || error "Couldn't add username and/or password."
 # Allow user to run sudo without password.
 changeperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
-# Install the aur helper
 echo "Installing the AUR helper..."
 manualinstall "yay-bin" || "Failed to install AUR helper."
 
