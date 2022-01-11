@@ -15,7 +15,15 @@
 ,dmenu,
 ,picom,A terminal compositor.
 ,mopidy,
+,nodejs,
 ,highlight,A universal sourcecode to formatted text converter.
-A,noto-fonts-emoji,An emoji font.
-A,bashmount,A small cli for mounting external drives.
-A,cozette-otb,A cozy bitmap font.
+,lf,
+,noto-fonts-emoji,An emoji font.
+,bashmount,A small cli for mounting external drives.
+,cht.sh-git,
+,nodejs
+,cozette-otb,A cozy bitmap font.
+,otb-unifont,A unicode font for extra symbols.
+,mopidy-spotify,
+P,py-spotift,
+,mopidy-mpd,

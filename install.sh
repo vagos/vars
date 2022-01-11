@@ -57,7 +57,6 @@ basicinstall()
 {
   echo "Installing the bare basics first..."
 
-  for pkg in curl base-devel git zsh ; do 
     echo "Installing $pkg"
     installpkg $pkg
   done
@@ -82,7 +81,7 @@ gitinstall()
    sleep 1
 }
 
-aurinstall()
+aurhelperinstall()
 {
   sudo -u "$name" $aurhelper -S --noconfirm "$1" 
   echo "$pacman -Qqm" | grep -q "^$1$" && error "Failed to intall AUR package: $1"
@@ -113,11 +112,6 @@ installprograms() # Install all the programs located in the programs file
     n=$((n+1))
 
     case "$tag" in 
-      
-      "A") aurinstall "$program" "$comment" ;;
-
-       * ) maininstall "$program" "$comment" ;;
-
     esac
 
   done < /tmp/programs.csv

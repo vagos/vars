@@ -4,5 +4,6 @@ https://stackoverflow.com/questions/24793069/what-does-do-in-bash
 
 ## TODO 
 
-- [ ] add cheat.sh intergration
+- [X] add cheat.sh intergration
 - [ ] create qutebrowser homepage
+- [ ] add automatic file recompilation (remove latex live preview)
