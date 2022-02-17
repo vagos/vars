@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ScriptVersion="0.1"
-ScriptName="VARS"
+SCRIPT_VERSION="0.1"
+SCRIPT_NAME="VARS"
 
 function usage ()
 {
@@ -21,7 +21,7 @@ while getopts ":p:d:h:v" opt; do
 
     h)  usage; exit 0   ;;
 
-    v)  echo "$0 -- Version $ScriptVersion"; exit 0  ;;
+    v)  echo "$0 -- Version $SCRIPT_VERSION"; exit 0  ;;
 
     d) dotfiles=${OPTARG} && git ls-remote "$dotfiles" || exit 1 ;;
 
@@ -67,6 +67,8 @@ refreshkeyrings()
   echo "Refreshing Arch Keyring"
  
   installpkg archlinux-keyring
+
+  pacman -Syy
 }
 
 maininstall()
@@ -137,7 +139,7 @@ installdotfiles() # Install dotfiles with stow
   done
 }
 
-getuseranspass()
+getuserandpass()
 {
   read -p "Please enter a username: " name
 
@@ -145,15 +147,12 @@ getuseranspass()
     read -p "Please enter a (valid) username: " name
   done
 
-  read -sp "Please enter a password: " pass
-  echo
-  read -sp "Please repeat your password: " passcnfrm
-
-  while ! [ "$pass" = "$passcnfrm" ]; do
-    echo "Passwords didn't match!"
+  while :; do
     read -sp "Please enter a password: " pass
     echo
     read -sp "Please repeat your password: " passcnfrm
+    if [ "$pass" = "$passcnfrm" ]; then break fi
+    echo "Passwords didn't match!"
   done
 
   clear
@@ -202,11 +201,9 @@ extrainstalls()
 
 welcome 
 
-getuseranspass || error "Installation cancelled."
+getuserandpass || error "Installation cancelled."
 
 refreshkeyrings
-
-pacman -Syy
 
 basicinstall
 
@@ -216,7 +213,7 @@ adduser || error "Couldn't add username and/or password."
 changeperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
 echo "Installing the AUR helper..."
-manualinstall "yay-bin" || "Failed to install AUR helper."
+manualinstall "yay-bin" || error "Failed to install AUR helper."
 
 installprograms
 
