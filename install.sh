@@ -9,7 +9,9 @@ function usage ()
 
     Options:
     -h|help       Display this message
-    -v|version    Display script version"
+    -v|version    Display script version
+    -p|programs   Set a .csv file to install programs from
+    -d|dotfiles   Set a repository to install dotfiles from"
 }
 
 #-----------------------------------------------------------------------
@@ -114,6 +116,8 @@ installprograms() # Install all the programs located in the programs file
     n=$((n+1))
 
     case "$tag" in 
+      "P") pipinstall program ;;
+      *) installpkg program   ;;
     esac
 
   done < /tmp/programs.csv
@@ -188,11 +192,14 @@ extrainstalls()
 {
   nvim +'PlugInstall --sync' +qa # Install vim plugins
 
-  dirs=(downloads projects files)
-
-  for dir in ${dirs[@]}; do 
+  for dir in downloads projects files; do 
     mkdir -p /home/$name/$dir
   done
+
+  # enable ssh
+  systemctl start sshd.service
+  systemctl enable sshd.service
+
 }
 
 #-----------------------------------------------------------------------

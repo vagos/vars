@@ -1,29 +1,30 @@
 #TAG,NAME,DESCRIPTION
-,xorg-server,The graphical server.
-,xorg-xinit,Start the graphical server.
-,ncmpcpp,A terminal music player.
-,i3,The window manager.
-,stow,A symbolic links manager.
-,alacritty, A terminal emulator.
-,neovim,The text editor.
-,sxiv,A simple X image viewer.
+,xorg-server,the graphical server.
+,xorg-xinit,start the graphical server.
+,ncmpcpp,a terminal music player.
+,i3,the window manager.
+,stow,a symbolic links manager.
+,alacritty, a terminal emulator.
+,neovim,the text editor.
+,sxiv,a simple x image viewer.
 ,tmux, 
 ,newsboat,
 ,lazygit,
 ,rsync,
 ,qutebrowser,
 ,dmenu,
-,picom,A terminal compositor.
-,mopidy,
+,xdotool,tool for getting window information.
+,picom,a terminal compositor.
+,entr,run arbitrary commands when files change
 ,nodejs,
-,highlight,A universal sourcecode to formatted text converter.
-,lf,
-,noto-fonts-emoji,An emoji font.
-,bashmount,A small cli for mounting external drives.
+,highlight,a universal sourcecode to formatted text converter.
+,lf,a terminal file manager/explorer.
+,noto-fonts-emoji,an emoji font.
+,bashmount,a small cli helper for mounting external drives.
 ,cht.sh-git,
-,nodejs
-,cozette-otb,A cozy bitmap font.
-,otb-unifont,A unicode font for extra symbols.
+,cozette-otb,a cozy bitmap font.
+,otb-unifont,a unicode font for extra symbols.
+,mopidy,
 ,mopidy-spotify,
-P,py-spotift,
+P,py-spotify,
 ,mopidy-mpd,
