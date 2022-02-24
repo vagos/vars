@@ -1,30 +1,32 @@
 #TAG,NAME,DESCRIPTION
-,xorg-server,the graphical server.
-,xorg-xinit,start the graphical server.
-,ncmpcpp,a terminal music player.
-,i3,the window manager.
-,stow,a symbolic links manager.
 ,alacritty, a terminal emulator.
-,neovim,the text editor.
-,sxiv,a simple x image viewer.
-,tmux, 
-,newsboat,
-,lazygit,
-,rsync,
-,qutebrowser,
-,dmenu,
-,xdotool,tool for getting window information.
-,picom,a terminal compositor.
-,entr,run arbitrary commands when files change
-,nodejs,
-,highlight,a universal sourcecode to formatted text converter.
-,lf,a terminal file manager/explorer.
-,noto-fonts-emoji,an emoji font.
 ,bashmount,a small cli helper for mounting external drives.
 ,cht.sh-git,
 ,cozette-otb,a cozy bitmap font.
-,otb-unifont,a unicode font for extra symbols.
+,dmenu,
+,entr,run arbitrary commands when files change
+,highlight,a universal sourcecode to formatted text converter.
+,i3,the window manager.
+,lazygit,
+,lf,a terminal file manager/explorer.
 ,mopidy,
+,mopidy-mpd,
 ,mopidy-spotify,
 P,py-spotify,
-,mopidy-mpd,
+,ncmpcpp,a terminal music player.
+,neovim,the text editor.
+,newsboat,
+,nodejs,
+,noto-fonts-emoji,an emoji font.
+,otb-unifont,a unicode font for extra symbols.
+,picom,a terminal compositor.
+,qutebrowser,a web browser with vim keybindings
+,rsync,tool for syncing files between computers
+,stow,a symbolic links manager.
+,sxhkd,tool for setting global hotkeys
+,sxiv,a simple x image viewer.
+,tmux,a terminal emulator
+,xdotool,tool for getting window information.
+,xorg-server,the graphical server.
+,xorg-xinit,start the graphical server.
+,xwiininfo,another tool for getting window information.

@@ -200,6 +200,10 @@ extrainstalls()
   systemctl start sshd.service
   systemctl enable sshd.service
 
+  read -p "Do you want to add various helper scripts/presets?" -n 1 -r
+
+  [[ $REPLY =~ ^[Yy]$ ]] && mv extras/* /home/$name 
+
 }
 
 #-----------------------------------------------------------------------
@@ -225,5 +229,7 @@ manualinstall "yay-bin" || error "Failed to install AUR helper."
 installprograms
 
 installdotfiles $dotfilesrepo
+
+extrainstalls
 
 finalize
