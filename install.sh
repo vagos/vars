@@ -58,7 +58,8 @@ welcome()
 basicinstall()
 {
   echo "Installing the bare basics first..."
-
+    
+  for pkg in curl base-devel git zsh; do
     echo "Installing $pkg"
     installpkg $pkg
   done
@@ -202,8 +203,7 @@ extrainstalls()
 
   read -p "Do you want to add various helper scripts/presets?" -n 1 -r
 
-  [[ $REPLY =~ ^[Yy]$ ]] && mv extras/* /home/$name 
-
+  # [[ $REPLY =~ ^[Yy]$ ]] && mv extras/* /home/$name 
 }
 
 #-----------------------------------------------------------------------

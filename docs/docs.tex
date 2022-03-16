@@ -5,6 +5,7 @@
 \usepackage{color}
 \usepackage{listings}
 \usepackage[hidelinks]{hyperref}
+\usepackage{dirtytalk}
 
 % Configuration
 
@@ -21,19 +22,21 @@
 % \newcommand{\src}[2][bash]{\colorbox{lightgray}{\lstinline[language=#1] #2}}
 
 \newcommand{\me}{Vagos Labrou}
-\newcommand{\terminalemulator}{Alacritty}
+\newcommand{\instlname}{VARS}
+\newcommand{\terminalemulator}{alacritty}
 \newcommand{\editor}{vim}
 \newcommand{\browser}{qutebrowser}
 \newcommand{\altbrowser}{Brave}
 \newcommand{\videoplayer}{mpv}
 \newcommand{\wm}{i3}
+\newcommand{\shrtcm}{sxhkd}
 
 \newcommand{\shortcuttitle}[1]{\underline{#1}}
 
 % Info
 
 \author{Vagos Labrou}
-\title{V.A.R.S Documentation}
+\title{VARS Documentation}
 \date{}
 
 \begin{document}
@@ -57,22 +60,42 @@ by looking at the configuration files located in
 
 \section{Main Overview}
 
+\subsection{Global Shortcuts}
 
-\subsection{Basic Navigation}
+Shortcuts are managed by \shrtcm. Here are shortcuts that 
+should remain intact if you decide to change window manager.
+
+\begin{minipage}{\textwidth}
+
+\shortcut{Open new terminal}{Mod + ENTER}
+\shortcut{Launch Programs with dmenu}{Mod + d}
+\shortcut{Take screenshot}{Mod + PrintScr}
+
+Most functions keys should do something sane.
+
+\end{minipage}
+
+
+\subsection{Window Manager}
 
 The window manager is \wm. It offers great flexibility on how you 
 can arrange your windows. 
 
-For screenshot taking I have only included the ability to take 
-a shot of the active window because I feel thats the only sensible use case.
+\wm has a feature where you can have multiple workspaces. 
+This is a good addition but can be dangerous when you end 
+up splitting your work between many workspaces and forget 
+where certain windows are. 
+That's why you are \say{limited} to only two (2) workspaces: \src{main} and \src{other}.
+
+Try to maximize the ammount of windows you have open in a single 
+workspace. Utilize tabs and when things get cluttered, send 
+windows to the scratchpad or just close them.
 
 \subsubsection{Shortcuts}
 
 \begin{minipage}{\textwidth}
 
-\shortcut{New Terminal Window}{Mod + Enter}
 \shortcut{Move between windows}{Mod + Arrowkeys}
-\shortcut{Launch Programs with dmenu}{Mod + d}
 \shortcut{Move around Workspaces}{Mod + Numeric Keys}
 \shortcut{Move Window to Workspace}{Mod + Shift + Numeric Keys}
 
@@ -89,13 +112,6 @@ a shot of the active window because I feel thats the only sensible use case.
     \shortcut{Split the Window horizontally}{Mod + h}
 \end{minipage}
 
-\begin{minipage}{\textwidth}
-    \shortcuttitle{Extras}
-
-    \shortcut{Take screenshot of current window}{Mod + PrintScr}
-
-\end{minipage}
-
 \subsection{Text Editing}
 
 The text editor is \editor. Most of this setup actually 
@@ -109,7 +125,7 @@ Also, not too many custom shortcuts have been added, only adding
 some simple enhancements to already existing vim capabilities.
 
 Auto completion is done through CoC (Conquer of Completion) since I found that it has 
-the best out of the box experience. 
+the best out of the box experience.
 
 \subsubsection{Shortcuts}
 
@@ -121,7 +137,7 @@ the best out of the box experience.
 \subsection{Web}
 
 Web browsing is done using \browser. It's fairly light and can be used 
-exclusively using the keyboard. 
+exclusively using the keyboard.
 
 \subsubsection{Shortcuts}
 
@@ -133,7 +149,7 @@ and access to chrome plugins you can still use \altbrowser.
 
 \subsection{Terminal}
 
-The terminal emulator used is \terminalemulator. 
+The terminal emulator used is \terminalemulator.
 
 \subsection{Organisation}
 
@@ -171,16 +187,33 @@ Some useful scripts are included in the \src{files/scripts} folder.
 
 \subsection{Other}
 
+\subsubsection{Edit Configurations}
+
+To quickly find and edit a configuration file, type 
+\src{ce} in your terminal. An fzf menu will appear for you 
+to search, find and edit any of the configuration files. 
+In a regular \instlname installation these should be 
+in \src{\char`~/.dotfiles}.
+
+\subsubsection{Manpages}
+
+Try and get into the habit of reading manpages and documentation in general.
+StackOveflow and similar sites are good for solving small problems but a single 
+skim of the documentation can solve more questions than many seperate searches.
+
+Most utilities on your systems include a manual which can accesed using \src{man <name>}.
+
 % Use makefiles!
 % Use cheat.sh
 % Search engine
+% entr
 % Torrents
+% rafi
 
 \section{Contact Info}
 
 \begin{itemize}
     \item e-mail: vagoslabrou@gmail.com
-    \item discord: Vagoz\#9458
 \end{itemize}
 
 % \section{Resources}

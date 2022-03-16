@@ -1,32 +1,35 @@
 #TAG,NAME,DESCRIPTION
-,alacritty, a terminal emulator.
-,bashmount,a small cli helper for mounting external drives.
+,alacritty,terminal emulator.
+,bashmount,small cli helper for mounting external drives.
 ,cht.sh-git,
-,cozette-otb,a cozy bitmap font.
+,cozette-otb,cozy bitmap font.
 ,dmenu,
-,entr,run arbitrary commands when files change
-,highlight,a universal sourcecode to formatted text converter.
-,i3,the window manager.
+,entr,utility to run arbitrary commands when files change
+,highlight,universal sourcecode to formatted text converter.
+,i3,window manager.
 ,lazygit,
-,lf,a terminal file manager/explorer.
+,lf,terminal file manager/explorer.
 ,mopidy,
 ,mopidy-mpd,
 ,mopidy-spotify,
 P,py-spotify,
-,ncmpcpp,a terminal music player.
+,ncmpcpp,terminal music player.
 ,neovim,the text editor.
-,newsboat,
+,newsboat,rss reader
 ,nodejs,
 ,noto-fonts-emoji,an emoji font.
-,otb-unifont,a unicode font for extra symbols.
-,picom,a terminal compositor.
-,qutebrowser,a web browser with vim keybindings
+,otb-unifont,unicode font for extra symbols.
+,picom,terminal compositor.
+,qutebrowser,web browser with vim keybindings
 ,rsync,tool for syncing files between computers
-,stow,a symbolic links manager.
+,stow,symbolic links manager.
 ,sxhkd,tool for setting global hotkeys
-,sxiv,a simple x image viewer.
-,tmux,a terminal emulator
+,sxiv,simple x image viewer.
+,tmux,terminal emulator
 ,xdotool,tool for getting window information.
 ,xorg-server,the graphical server.
 ,xorg-xinit,start the graphical server.
 ,xwiininfo,another tool for getting window information.
+,xclip,tool for putting stuff into the clipboard.
+,maim,screenshot tool
+,fzf,command line fuzzy finder
