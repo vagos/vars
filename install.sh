@@ -40,7 +40,7 @@ done
 #-----------------------------------------------------------------------
 
 
-installpkg() { pacman --noconfirm --needed -S "$1"  ; } # >/dev/null 2>&1; &>/dev/null}
+installpkg() { pacman --noconfirm --needed -S "$1"  ; &>/dev/null }
 
 error() { printf "%s\n" "$1" >&2; exit 1; }
 
@@ -70,12 +70,6 @@ refreshkeyrings()
   pacman -Syy
 }
 
-maininstall()
-{
-  echo "Installing $1: $2"
-  installpkg "$1"
-  sleep 0.5
-}
 
 gitinstall()
 {
@@ -112,9 +106,11 @@ installprograms() # Install all the programs located in the programs file
   while IFS=, read -r tag program comment; do
     n=$((n+1))
 
+    echo Installing: $program: $comment
+
     case "$tag" in 
-      "P") pipinstall program ;;
-      *) installpkg program   ;;
+      "P") pipinstall $program ;;
+      *) installpkg $program   ;;
     esac
 
   done < /tmp/programs.csv
