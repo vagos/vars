@@ -21,15 +21,11 @@ function usage ()
 while getopts ":p:d:h:v" opt; do
   case ${opt} in
 
-    h)  usage; exit 0   ;;
-
-    v)  echo "$0 -- Version $SCRIPT_VERSION"; exit 0  ;;
-
+    h) usage; exit 0   ;;
+    v) echo "$0 -- Version $SCRIPT_VERSION"; exit 0  ;;
     d) dotfiles=${OPTARG} && git ls-remote "$dotfiles" || exit 1 ;;
-
     p) prgrmsfile=${OPTARGS} ;;
-
-    ?)  echo -e "\nOption does not exist : ($OPTARG)\n"; usage && exit 1 ;;
+    ?) echo -e "\nOption does not exist : ($OPTARG)\n"; usage && exit 1 ;;
 
   esac
 done
@@ -156,7 +152,7 @@ getuserandpass()
     read -sp "Please enter a password: " pass
     echo
     read -sp "Please repeat your password: " passcnfrm
-    if [ "$pass" = "$passcnfrm" ]; then break fi
+    if [ "$pass" = "$passcnfrm" ]; then break; fi;
     echo "Passwords didn't match!"
   done
 
