@@ -6,7 +6,7 @@
 ,dmenu,
 ,entr,utility to run arbitrary commands when files change
 ,highlight,universal sourcecode to formatted text converter.
-,i3,window manager.
+,i3-wm,window manager.
 ,lazygit,
 ,lf,terminal file manager/explorer.
 ,mopidy,

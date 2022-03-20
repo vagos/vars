@@ -84,7 +84,7 @@ aurhelperinstall()
 
 pipinstall()
 {
-  [-x "$(command -v "pip")"] || installpkg "python-pip" 
+  [ -x "$(command -v "pip")" ] || installpkg "python-pip" 
   yes | pip install "$1"
 }
 
@@ -110,7 +110,7 @@ installprograms() # Install all the programs located in the programs file
 
     case "$tag" in 
       "P") pipinstall $program ;;
-      *) installpkg $program   ;;
+      *) aurhelperinstall $program   ;;
     esac
 
   done < /tmp/programs.csv
@@ -178,11 +178,12 @@ adduser()
 finalize()
 {
   echo "All done!"
-  cd /home/$name
 }
 
 extrainstalls()
 {
+  cd /home/$name
+
   nvim +'PlugInstall --sync' +qa # Install vim plugins
 
   for dir in downloads projects files; do 
