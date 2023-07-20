@@ -3,10 +3,15 @@
 ,bashmount,small cli helper for mounting external drives.
 ,cht.sh-git,
 ,cozette-otb,cozy bitmap font.
+,cozette-ttf,cozy vector font.
+,unifont-otb,extra glyphs
+,libertinus-font,
+,ttf-ms-fonts,
 ,dmenu,
 ,entr,utility to run arbitrary commands when files change
 ,highlight,universal sourcecode to formatted text converter.
 ,i3-wm,window manager.
+,i3blocks,
 ,lazygit,
 ,lf,terminal file manager/explorer.
 ,mopidy,
@@ -33,3 +38,16 @@ P,py-spotify,
 ,xclip,tool for putting stuff into the clipboard.
 ,maim,screenshot tool
 ,fzf,command line fuzzy finder
+,npm,
+,unzip,
+,inetutils,
+,zoxide,
+,light,
+A,mimi-bachoseven-git,default program utility - replacement to xdg-open
+,steam,
+,aerc,
+,irssi,
+,brave-bin,
+,dunst,notifications
+,zathura,
+,zathura-pdf-mupdf,
