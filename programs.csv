@@ -16,8 +16,10 @@
 ,lf,terminal file manager/explorer.
 ,mopidy,
 ,mopidy-mpd,
-,mopidy-spotify,
-P,py-spotify,
+A,mopidy-ytmusic-git,
+A,mopidy-soundcloud,
+A,mopidy-bandcamp,
+A,mopidy-mpris,
 ,ncmpcpp,terminal music player.
 ,neovim,the text editor.
 ,newsboat,rss reader
@@ -51,3 +53,58 @@ A,mimi-bachoseven-git,default program utility - replacement to xdg-open
 ,dunst,notifications
 ,zathura,
 ,zathura-pdf-mupdf,
+,imagemagick,
+,xwallpaper,
+,mixxx,dj software
+,bluez,
+,bluetuith,
+,go,the go programming language
+,btop,system monitor
+,w3m,
+,ripgrep,
+,pass,
+,passmenu,
+,wget,
+,rust,
+,python-neovim,
+,task,task manager (taskwarrior)
+,python-adblock,
+,arbtt,time tracker
+,fd,find alternative
+,bear,compile_commands.json generator
+,man-db,
+,gdb,
+,translate-shell,
+,texlive,
+,cloc,count lines of code
+,git-crypt,
+,noto-fonts-cjk,
+,noto-fonts,
+,urbit,runtime for urbit
+,nmap,
+,bind,dns tools
+,luarocks,
+A,nodejs-neovim,
+,docker,
+,rpcs3,
+,gnome-keyring,
+,gtk2,
+,vidir,
+,wine,
+,ghidra,
+,python-z3-solver,
+,ruby,
+A,pipx,
+,man-pages,
+,mons,
+A,xbanish,
+A,xxd-standalone,
+,mpv,
+,gst-libav,
+,ncdu,
+,beets,music library organiser
+,playerctl,mpris media player controller
+A,rescrobbled-git,music scrobbler using dbus interface
+,gnu-netcat,
+,audacity,
+,bc,
